@@ -16,8 +16,6 @@ function supplyPhrase(){
 	xhr.open("GET", "pieces.html");
 	xhr.responseType = "document";
 	xhr.send();
-	div.innerHTML = randomPhrase;
-	askButton.innerHTML = "Ask The 8 Ball Again";
 }
 
 askButton.onclick = supplyPhrase;
