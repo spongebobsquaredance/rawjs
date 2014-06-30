@@ -4,7 +4,7 @@ function switchIMG() {
 
 	var xhr = new XMLHttpRequest();
 
-	xhr.open("GET","pieces.html",true);
+	xhr.open("GET","http://spongebobsquaredance.github.io/rawjs/pieces.html",true);
 	xhr.responseType = "text";
 	xhr.send();
 
