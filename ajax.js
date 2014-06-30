@@ -4,7 +4,12 @@ var randomPhrase = phrases[Math.floor(Math.random()*phrases.length)];
 
 var askButton = document.getElementById("btn");
 
-var againButton = document.getElementById("agn");
+function changePhrase() {
+	function phrasePiece() {
+		return phrases[Math.floor(Math.random()*phrases.length)];
+	}
+	var returnedPhrase = phrasePiece();
+}
 
 function loadXMLDoc() {
     var xmlhttp;
@@ -21,9 +26,7 @@ function loadXMLDoc() {
         if (xmlhttp.readyState == 4 ) {
            if(xmlhttp.status == 200){
                document.getElementById("dynamic_content").innerHTML = xmlhttp.responseText;
-               document.getElementById("phrasediv").innerHTML = randomPhrase;
-               askButton.classList.add = ("hide");
-               againButton.classList.remove("hide");
+               document.getElementById("phrasediv").innerHTML = changePhrase;
            }
            else if(xmlhttp.status == 400) {
               alert('There was an error 400')
@@ -38,8 +41,18 @@ function loadXMLDoc() {
     xmlhttp.send();
 }
 
-function reload() {
-	document.getElementById("phrasediv").innerHTML = randomPhrase;
-}
+askButton.addEventListener("click", loadXMLDoc, false);
 
-askButton.onclick = loadXMLDoc;
+
+
+
+
+
+
+
+
+
+
+
+
+
