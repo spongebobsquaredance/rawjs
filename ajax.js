@@ -38,4 +38,3 @@ function loadXMLDoc() {
 
 
 askButton.onclick = loadXMLDoc;
-againButton.onclick = document.getElementById("phrasediv").innerHTML = randomPhrase;
