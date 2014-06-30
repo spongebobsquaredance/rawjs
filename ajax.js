@@ -6,6 +6,10 @@ var askButton = document.getElementById("btn");
 
 var againButton = document.getElementById("#agn");
 
+function reload() {
+	document.getElementById("phrasediv").innerHTML = randomPhrase;
+}
+
 function loadXMLDoc() {
     var xmlhttp;
 
@@ -22,7 +26,7 @@ function loadXMLDoc() {
            if(xmlhttp.status == 200){
                document.getElementById("dynamic_content").innerHTML = xmlhttp.responseText;
                document.getElementById("phrasediv").innerHTML = randomPhrase;
-               document.getElementById("agn").onlick = document.getElementById("phrasediv").innerHTML = randomPhrase;
+               document.getElementById("agn").onlick = reload;
            }
            else if(xmlhttp.status == 400) {
               alert('There was an error 400')
