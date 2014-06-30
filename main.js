@@ -16,7 +16,7 @@ function switchIMG() {
 	xmlhttp.responseType = "document";
 	xmlhttp.send();
 
-	xmlDoc=xmlhttp.responseXML;
+	xmlDoc=xmlhttp.responseText;
 
 	document.body.appendChild(xmlDoc);
 
