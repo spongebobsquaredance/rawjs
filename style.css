@@ -75,7 +75,7 @@ body {
 	max-width: 300px;
 }
 #btn,
-#again {
+#agn {
 	font-variant: small-caps;
 	font-size: 1em;
 	border: none;
@@ -83,6 +83,9 @@ body {
 	margin-left: 1em;
 	background: #fff;
 	margin-bottom: 1em;
+}
+.hide {
+	display: none;
 }
 
 .circle {
