@@ -4,6 +4,8 @@ var randomPhrase = phrases[Math.floor(Math.random()*phrases.length)];
 
 var askButton = document.getElementById("btn");
 
+var againButton = document.getElementById("agn");
+
 function loadXMLDoc() {
     var xmlhttp;
 
@@ -44,7 +46,7 @@ function changePhrase() {
 }
 
 askButton.addEventListener("click", loadXMLDoc, false);
-askButton.addEventListener("click", changePhrase, false);
+againButton.addEventListener("click", changePhrase, false);
 
 
 
