@@ -1,4 +1,5 @@
 <div id="die" class="triangle">
 	<div id="phrasediv" class="triangleNest">Yes</div>
 </div>
+<button id="agn">Ask The 8 Ball Again</button>
 

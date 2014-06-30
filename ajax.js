@@ -22,6 +22,7 @@ function loadXMLDoc() {
            if(xmlhttp.status == 200){
                document.getElementById("dynamic_content").innerHTML = xmlhttp.responseText;
                document.getElementById("phrasediv").innerHTML = randomPhrase;
+               document.getElementById("agn").onlick = document.getElementById("phrasediv").innerHTML = randomPhrase;
            }
            else if(xmlhttp.status == 400) {
               alert('There was an error 400')
