@@ -14,7 +14,7 @@ function loadXMLDoc() {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 ) {
            if(xmlhttp.status == 200){
-               document.getElementById("mainpage").innerHTML = xmlhttp.responseText;
+               document.getElementById("dynamic_content").innerHTML = xmlhttp.responseText;
            }
            else if(xmlhttp.status == 400) {
               alert('There was an error 400')
