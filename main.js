@@ -13,7 +13,7 @@ function switchIMG() {
 	}
 
 	xmlhttp.open("GET","pieces.html",true);
-	xmlhttp.responseType = "document";
+	xmlhttp.responseType = "text";
 	xmlhttp.send();
 
 	xmlDoc=xmlhttp.responseText;
