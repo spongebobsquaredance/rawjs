@@ -2,21 +2,13 @@ var askButton = document.getElementById("btn");
 
 function switchIMG() {
 
-	var xmlhttp;
+	var xhr = new XMLHttpRequest();
 
-	if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-	  xmlhttp=new XMLHttpRequest();
-	}
+	xhr.open("GET","pieces.html",true);
+	xhr.responseType = "text";
+	xhr.send();
 
-	else{ // code for IE6, IE5
-	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	}
-
-	xmlhttp.open("GET","pieces.html",true);
-	xmlhttp.responseType = "text";
-	xmlhttp.send();
-
-	xmlDoc=xmlhttp.responseText;
+	xmlDoc=xhr.responseText;
 
 	document.body.appendChild(xmlDoc);
 
