@@ -26,6 +26,14 @@ function loadXMLDoc() {
         if (xmlhttp.readyState == 4 ) {
            if(xmlhttp.status == 200){
                document.getElementById("dynamic_content").innerHTML = xmlhttp.responseText;
+               
+               function changePhrase() {
+					function phrasePiece() {
+						return phrases[Math.floor(Math.random()*phrases.length)];
+					}
+					var returnedPhrase = phrasePiece();
+					document.getElementById("phrasediv").innerHTML = returnedPhrase;
+				}
            }
            else if(xmlhttp.status == 400) {
               alert('There was an error 400')
@@ -38,14 +46,7 @@ function loadXMLDoc() {
 
     xmlhttp.open("GET", "pieces.txt", true);
     xmlhttp.send();
-    
-    function changePhrase() {
-		function phrasePiece() {
-			return phrases[Math.floor(Math.random()*phrases.length)];
-		}
-		var returnedPhrase = phrasePiece();
-		document.getElementById("phrasediv").innerHTML = returnedPhrase;
-	}
+
 }
 
 askButton.addEventListener("click", loadXMLDoc, false);
