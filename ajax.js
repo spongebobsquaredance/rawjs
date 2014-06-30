@@ -4,13 +4,6 @@ var randomPhrase = phrases[Math.floor(Math.random()*phrases.length)];
 
 var askButton = document.getElementById("btn");
 
-function changePhrase() {
-	function phrasePiece() {
-		return phrases[Math.floor(Math.random()*phrases.length)];
-	}
-	var returnedPhrase = phrasePiece();
-}
-
 function loadXMLDoc() {
     var xmlhttp;
 
@@ -26,14 +19,7 @@ function loadXMLDoc() {
         if (xmlhttp.readyState == 4 ) {
            if(xmlhttp.status == 200){
                document.getElementById("dynamic_content").innerHTML = xmlhttp.responseText;
-               
-               function changePhrase() {
-					function phrasePiece() {
-						return phrases[Math.floor(Math.random()*phrases.length)];
-					}
-					var returnedPhrase = phrasePiece();
-					document.getElementById("phrasediv").innerHTML = returnedPhrase;
-				}
+               document.getElementById("phrasediv").innerHTML = randomPhrase;
            }
            else if(xmlhttp.status == 400) {
               alert('There was an error 400')
@@ -49,8 +35,16 @@ function loadXMLDoc() {
 
 }
 
-askButton.addEventListener("click", loadXMLDoc, false);
+function changePhrase() {
+	function phrasePiece() {
+		return phrases[Math.floor(Math.random()*phrases.length)];
+	}
+	var returnedPhrase = phrasePiece();
+	document.getElementById("phrasediv").innerHTML = returnedPhrase;
+}
 
+askButton.addEventListener("click", loadXMLDoc, false);
+askButton.addEventListener("click", changePhrase, false);
 
 
 
