@@ -4,8 +4,6 @@ var randomPhrase = phrases[Math.floor(Math.random()*phrases.length)];
 
 var askButton = document.getElementById("btn");
 
-var againButton = document.getElementById("agn");
-
 function loadXMLDoc() {
     var xmlhttp;
 
@@ -22,6 +20,7 @@ function loadXMLDoc() {
            if(xmlhttp.status == 200){
                document.getElementById("dynamic_content").innerHTML = xmlhttp.responseText;
                document.getElementById("phrasediv").innerHTML = randomPhrase;
+               askButton.classList.add("hide");
            }
            else if(xmlhttp.status == 400) {
               alert('There was an error 400')
@@ -37,6 +36,15 @@ function loadXMLDoc() {
 
 }
 
+function switchBTN() {
+	var againButton = document.createElement("button");
+	againButton.setAttribute("id", "agn");
+	var agn_content = document.createTextNode("Ask The 8 Ball Again");
+	againButton.appendChild(agn_content);
+	var parentDiv = askButton.parentNode;
+	parentDiv.replaceChild(againButton, askButton);
+}
+
 function changePhrase() {
 	function phrasePiece() {
 		return phrases[Math.floor(Math.random()*phrases.length)];
@@ -46,6 +54,7 @@ function changePhrase() {
 }
 
 askButton.addEventListener("click", loadXMLDoc, false);
+askButton.addEventListener("click", switchBTN, false);
 againButton.addEventListener("click", changePhrase, false);
 
 

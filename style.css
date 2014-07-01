@@ -80,14 +80,9 @@ body {
 	font-size: 1em;
 	border: none;
 	padding: .25em;
-	margin-left: 1em;
 	background: #fff;
 	margin-bottom: 1em;
 }
-.hide {
-	display: none;
-}
-
 .circle {
 	width:400px;
     height:400px;
