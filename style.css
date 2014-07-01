@@ -58,13 +58,13 @@ body {
 .triangle {
 	width: 0;
 	height: 0;
-	border-bottom: 14em solid rgba(42,56,113,.8);
-	border-left: 8.75em solid transparent;
-	border-right: 8.75em solid transparent;
+	border-bottom: 12.5em solid rgba(42,56,113,.8);
+	border-left: 7.813em solid transparent;
+	border-right: 7.813em solid transparent;
 	margin: 48px auto;
 }
 .triangleNest {
-	padding-top: 270px;
+	padding-top: 225px;
 	margin-left: -150px;
 	font-size: 1.5em;
 	font-family: sans-serif;
@@ -79,9 +79,10 @@ body {
 	font-variant: small-caps;
 	font-size: 1em;
 	border: none;
-	padding: .25em;
+	padding: .4em;
 	background: #fff;
 	margin-bottom: 1em;
+	margin-left: .4em;
 }
 .circle {
 	width:400px;
@@ -94,3 +95,17 @@ body {
     background:#fff;
     margin: 48px auto;
 }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
