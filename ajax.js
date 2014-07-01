@@ -36,15 +36,6 @@ function loadXMLDoc() {
 
 }
 
-function switchBTN() {
-	var againButton = document.createElement("button");
-	againButton.setAttribute("id", "agn");
-	var agn_content = document.createTextNode("Ask The 8 Ball Again");
-	againButton.appendChild(agn_content);
-	var parentDiv = askButton.parentNode;
-	parentDiv.replaceChild(againButton, askButton);
-}
-
 function changePhrase() {
 	function phrasePiece() {
 		return phrases[Math.floor(Math.random()*phrases.length)];
@@ -53,11 +44,18 @@ function changePhrase() {
 	document.getElementById("phrasediv").innerHTML = returnedPhrase;
 }
 
+function switchBTN() {
+	var againButton = document.createElement("button");
+	againButton.setAttribute("id", "agn");
+	var agn_content = document.createTextNode("Ask The 8 Ball Again");
+	againButton.appendChild(agn_content);
+	againButton.onclick = changePhrase;
+	var parentDiv = askButton.parentNode;
+	parentDiv.replaceChild(againButton, askButton);
+}
+
 askButton.addEventListener("click", loadXMLDoc, false);
 askButton.addEventListener("click", switchBTN, false);
-againButton.addEventListener("click", changePhrase, false);
-
-
 
 
 
